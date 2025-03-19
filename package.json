@@ -2,9 +2,9 @@
   "name": "flightsandsearch",
   "version": "1.0.0",
   "description": "Microservice for Flight CRUD",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": "nodemon src/index.ts"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +12,17 @@
     "body-parser": "^1.20.3",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "pg": "^8.14.1",
+    "postgres": "^3.4.5",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.21"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.10",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.8.2"
   }
 }
