@@ -2,6 +2,7 @@ import "reflect-metadata";  // Required by TypeORM
 import { DataSource } from "typeorm";
 import dotenv from "dotenv";
 import { Airport } from "../models/Airport";
+import { City } from "../models/City";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -16,7 +17,7 @@ const AppDataSource = new DataSource({
   database: process.env.DB_NAME, // Replace with your database name
   synchronize: true, // Automatically synchronize entities with the DB (useful in development)
   logging: true,
-  entities: [Airport], // List of entities to load
+  entities: [Airport,City], // List of entities to load
 });
 
 export const connectToDatabase = async () => {
@@ -24,7 +25,7 @@ export const connectToDatabase = async () => {
     await AppDataSource.initialize();
     console.log("Database connected successfully.");
   } catch (error) {
-    console.error("Error during database connection:", error);
+    console.error("Error during datasource initialization:", error);
     process.exit(1); // Exit if database connection fails
   }
 };
